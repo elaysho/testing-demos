@@ -19,7 +19,8 @@
     </div>
 
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/scroll.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/calculator/calculator.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/calculator/calculator-controller.js') }}" type="text/javascript"></script>
 
     @stack('scripts')
 </body>

@@ -16,14 +16,10 @@
                     <h1 class="text-8xl font-bold">software testing</h1> 
                     <p>is the basic activity aimed at detecting and solving technical issues in the software source code</p>
                 </div>
-                <div class="w-1/3 mockup-code border border-base-300">
-                    <div class="flex text-left px-4 py-16">
-                        <code>
-                            > php artisan run test<br>
-                            > it works!
-                        </code>
-                    </div>
-                </div>
+                @include('components.mockups.code', [
+                    'content' => "> php artisan run test<br>
+                                > it works!"
+                ])
             </div>
         </div>
 
@@ -137,34 +133,15 @@
                         <h1 class="text-8xl font-bold mb-3">jest</h1>
                         <p>> unit testing framework for JavasScript</p>
                         <p>> was created by Facebook specifically for testing React applications</p>
+                        <p>> zero config, snapshots, isolation, great api</p>
 
-                        <div class="grid grid-cols-2 gap-4 mt-5">
-                            <div class="card border border-base-content">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title m-0">zero config</h2> 
-                                </div>
-                            </div> 
-                            <div class="card border border-base-content">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title m-0">snapshots</h2> 
-                                </div>
-                            </div> 
-                            <div class="card border border-base-content">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title m-0">isolated</h2> 
-                                </div>
-                            </div> 
-                            <div class="card border border-base-content">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title m-0">great api</h2> 
-                                </div>
-                            </div> 
-                        </div>
+                        <h3 class="text-2xl font-bold mt-5"> to install </h3>
+                        <pre class="bg-base-300 text-base-content rounded-box px-4 py-6"><code>> npm install --save-dev jest</code></pre>
                     </div>
 
-                    <div class="carousel h-full">
+                    <div class="carousel carousel-end h-full">
                         <!-- Logo -->
-                        <div class="carousel-item w-full h-full flex justify-evenly content-center bg-base-content text-base-100">
+                        <div class="carousel-item w-full h-full flex justify-evenly content-center bg-base-content text-base-100 box-border">
                             <svg class="m-auto" width="256px" height="283px" viewBox="0 0 256 283" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
                                 <g>
                                     <path d="M239.972557,139.203 C239.972557,124.669 228.190557,112.887 213.656557,112.887 C212.721557,112.887 211.799557,112.937 210.890557,113.032 L247.035557,6.427 L93.431557,6.427 L129.525557,112.94 C128.996557,112.908 128.464557,112.887 127.926557,112.887 C113.392557,112.887 101.610557,124.669 101.610557,139.203 C101.610557,150.951 109.309557,160.897 119.936557,164.281 C114.323557,174.003 107.261557,182.759 99.243557,190.323 C88.340557,200.609 75.862557,208.408 62.367557,213.214 C46.299557,204.96 38.711557,186.602 45.558557,170.507 C46.331557,168.69 47.120557,166.847 47.875557,165.013 C59.515557,162.296 68.189557,151.86 68.189557,139.392 C68.189557,124.858 56.407557,113.076 41.873557,113.076 C27.338557,113.076 15.556557,124.858 15.556557,139.392 C15.556557,148.305 19.991557,156.176 26.769557,160.937 C20.255557,175.768 10.681557,191.288 7.69855701,209.276 C4.12355701,230.835 7.68755701,253.719 26.332557,266.642 C69.756557,296.738 116.892557,247.985 166.591557,235.729 C184.602557,231.287 204.373557,232.003 220.242557,222.812 C232.159557,215.91 240.015557,204.472 242.245557,191.63 C244.447557,178.944 241.236557,166.313 233.852557,156.071 C237.671557,151.503 239.972557,145.623 239.972557,139.203 L239.972557,139.203 Z M154.240557,139.296 C154.240557,139.265 154.243557,139.234 154.243557,139.203 C154.243557,129.659 149.161557,121.301 141.557557,116.688 L170.285557,58.597 L199.063557,117.304 C191.996557,122.022 187.339557,130.068 187.339557,139.203 C187.339557,139.395 187.350557,139.584 187.354557,139.775 L154.240557,139.296 L154.240557,139.296 Z" fill="#C63D14"></path>
@@ -173,20 +150,57 @@
                             </svg>
                         </div>
 
-                        <!-- Installation -->
-                        <div class="carousel-item w-full h-full flex flex-col bg-base-200 text-base-content space-y-3 p-4">
-                            <h3 class="text-2xl font-bold"> demo </h3>
-                            {{-- <div class="w-full mockup-window bg-base-300 border border-base-content">
-                                <div class="flex bg-base-200 text-left px-4 py-16">
-                                    <code>
-                                        > npm install --save-dev jest
-                                    </code>
-                                </div>
-                            </div> --}}
+                        <!-- Code Preview -->
+                        <div class="carousel-item w-full h-full flex flex-col bg-base-200 text-base-content space-y-3 p-4 box-border">
+                            <h3 class="text-2xl font-bold mt-5">create a test -- *.spec.js</h3>
+                            <p>> store at __tests__ folder</p>
+                            <p>> example name: calculator.spec.js</p>
+
+                            <h3 class="text-2xl font-bold mt-5">npm test</h3>
+                            <p>> to use the command, add the ff on /package.json:</p>
+                            <pre class="bg-base-content text-base-100 rounded-box px-4 py-6"><code>"scripts": {
+    "test": "jest --coverage"
+},</code></pre>
+                        </div>
+
+                        <!-- Demo -->
+                        <div class="carousel-item w-full h-full flex flex-col bg-base-200 text-base-content space-y-3 p-4 box-border">
+                            <h3 class="text-2xl font-bold mt-5">> demo: calculator.js</h3>
+
+                            @include('components.calculator.index')
                         </div>
                     </div>
                 </div>
             </div>     
-        </div>      
+        </div> 
+
+        <!-- PHPUnit -->
+        <div id="slide-5" class="carousel-item hero min-h-screen bg-base-200">
+            <div class="w-screen h-screen hero-content px-20 py-20 space-y-5">
+                <div class="w-full h-full grid grid-cols-2 gap-5">
+                    <div class="carousel carousel-end h-full">
+                        <!-- Code Preview -->
+                        <div class="carousel-item w-full h-full flex flex-col bg-base-200 text-base-content space-y-3 p-4 box-border">
+                            <h3 class="text-2xl font-bold mt-5">> code preview</h3>
+                            
+                        </div>
+
+                        <!-- Demo -->
+                        <div class="carousel-item w-full h-full flex flex-col bg-base-200 text-base-content space-y-3 p-4 box-border">
+                            <h3 class="text-2xl font-bold mt-5">> demo: todo.js</h3>
+
+                            
+                        </div>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="w-full h-full flex flex-col bg-base-content text-base-100 text-right justify-start roundex-box p-6">
+                        <code>unit testing > tools</code>
+                        <h1 class="text-8xl font-bold mb-3">phpunit</h1>
+                        <p></p>
+                    </div>
+                </div>
+            </div>   
+        </div> 
     </div>
 @endsection
