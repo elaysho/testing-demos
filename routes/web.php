@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.index');
 });
+
+Route::get('/kpop', function () {
+    return view('pages.kpop');
+});

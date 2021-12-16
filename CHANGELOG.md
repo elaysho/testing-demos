@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.0] - 2021-12-16
+
+### Added
+- Added .env for testing
+- Added Task model, migration, factory
+- Added TasksTest feature testsuite
+- Added scripts for todo demo
+- Added function for rendering of view on backend
+
 ## [1.0.0] - 2021-12-14
 
 ### Added

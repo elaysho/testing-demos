@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" value="{{ csrf_token() }}"/>
 
-    <title>{{ env('APP_NAME', 'all about testing') }}</title>
+    <title>@yield('title')</title>
 
     <link href="{{ asset('css/app.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('css/custom.css') }}" type="text/css" rel="stylesheet" />
 
     @stack('styles')
 </head>
@@ -19,8 +20,11 @@
     </div>
 
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+
     <script src="{{ asset('js/calculator/calculator.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/calculator/calculator-controller.js') }}" type="text/javascript"></script>
+
+    <script src="{{ asset('js/todo/todo.js') }}" type="text/javascript"></script>
 
     @stack('scripts')
 </body>

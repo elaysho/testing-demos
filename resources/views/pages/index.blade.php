@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('title')
+    {{ env('APP_NAME', 'all about testing') }}
+@endsection
+
 @section('content')
     <!-- Carousel Pagination -->
     {{-- <div class="sticky flex flex-col justify-center w-full py-4 space-y-2">
@@ -13,7 +17,7 @@
         <div id="slide-1" class="carousel-item hero min-h-screen bg-base-200">
             <div class="w-screen hero-content flex-row justify-between px-20">
                 <div class="max-w-md space-y-5">
-                    <h1 class="text-8xl font-bold">software testing</h1> 
+                    <h1 class="text-8xl font-bold">software testing <span class="text-1xl badge badge-outline">pt. 1</span></h1> 
                     <p>is the basic activity aimed at detecting and solving technical issues in the software source code</p>
                 </div>
                 @include('components.mockups.code', [
@@ -150,23 +154,29 @@
                             </svg>
                         </div>
 
-                        <!-- Code Preview -->
-                        <div class="carousel-item w-full h-full flex flex-col bg-base-200 text-base-content space-y-3 p-4 box-border">
-                            <h3 class="text-2xl font-bold mt-5">create a test -- *.spec.js</h3>
-                            <p>> store at __tests__ folder</p>
-                            <p>> example name: calculator.spec.js</p>
+                        <!-- Info -->
+                        <div class="carousel-item w-full h-full flex flex-col bg-base-200 text-base-content p-4 box-border">
+                            <h3 class="text-2xl font-bold mt-5">write a test -- *.spec.js</h3>
+                            <p class="pl-3">> store at __tests__ folder</p>
+                            <p class="pl-3">> example name: calculator.spec.js</p>
 
                             <h3 class="text-2xl font-bold mt-5">npm test</h3>
-                            <p>> to use the command, add the ff on /package.json:</p>
+                            <p class="pl-3">> to use the command, add the following on /package.json:</p>
                             <pre class="bg-base-content text-base-100 rounded-box px-4 py-6"><code>"scripts": {
     "test": "jest --coverage"
 },</code></pre>
+
+                            <h3 class="text-2xl font-bold mt-5">sample</h3>
+                                <pre class="bg-base-content text-base-100 rounded-box px-4 py-6"><code>describe('a calculator', () => {
+    it('adds 1 + 1', () => {
+        expect(1 + 1).toBe(2);
+    });
+);</code></pre>
                         </div>
 
                         <!-- Demo -->
                         <div class="carousel-item w-full h-full flex flex-col bg-base-200 text-base-content space-y-3 p-4 box-border">
                             <h3 class="text-2xl font-bold mt-5">> demo: calculator.js</h3>
-
                             @include('components.calculator.index')
                         </div>
                     </div>
@@ -174,22 +184,37 @@
             </div>     
         </div> 
 
-        <!-- PHPUnit -->
+        <!-- PHPUnit: Unit and Feature Tests-->
         <div id="slide-5" class="carousel-item hero min-h-screen bg-base-200">
             <div class="w-screen h-screen hero-content px-20 py-20 space-y-5">
                 <div class="w-full h-full grid grid-cols-2 gap-5">
                     <div class="carousel carousel-end h-full">
                         <!-- Code Preview -->
                         <div class="carousel-item w-full h-full flex flex-col bg-base-200 text-base-content space-y-3 p-4 box-border">
-                            <h3 class="text-2xl font-bold mt-5">> code preview</h3>
-                            
+                            {{-- <h3 class="text-2xl font-bold mt-5">tests in laravel</h3>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="card border border-base-content">
+                                    <a href="#unit-testing">
+                                        <div class="card-body">
+                                            <h2 class="card-title">unit</h2> 
+                                            <p></p>
+                                        </div>
+                                    </a>
+                                </div> 
+                                <div class="card border border-base-content">
+                                    <div class="card-body">
+                                        <h2 class="card-title">feature</h2> 
+                                        <p></p>
+                                    </div>
+                                </div> 
+                            </div> --}}
                         </div>
 
                         <!-- Demo -->
                         <div class="carousel-item w-full h-full flex flex-col bg-base-200 text-base-content space-y-3 p-4 box-border">
                             <h3 class="text-2xl font-bold mt-5">> demo: todo.js</h3>
-
-                            
+                            @include('components.tasks.todo')
                         </div>
                     </div>
 
@@ -197,10 +222,52 @@
                     <div class="w-full h-full flex flex-col bg-base-content text-base-100 text-right justify-start roundex-box p-6">
                         <code>unit testing > tools</code>
                         <h1 class="text-8xl font-bold mb-3">phpunit</h1>
-                        <p></p>
+
+                        <p>supported by Laravel;</p>
+                        <p>
+                            has <span class="badge badge-outline text-base-100">Unit</span> & <span class="badge badge-outline text-base-100">Feature</span> tests
+                        </p>
+                        <br>
+
+                        <p>will recognize all functions prefixed with test as a test function and run it automatically</p>
+                        <br>
+
+                        <h3 class="text-2xl font-bold mt-5"> to run </h3>
+                        <pre class="bg-base-300 text-base-content rounded-box text-left px-4 py-6"><code>> php artisan test --env=testing</code></pre>
                     </div>
                 </div>
             </div>   
         </div> 
+
+        <!-- Other Tools -->
+        <div id="slide-6" class="carousel-item hero min-h-screen bg-base-200">
+            <div class="w-screen hero-content flex-col justify-center px-20">
+                <h1 class="text-4xl font-bold">> other testing tools</h1>
+                <h1 class="text-2xl font-semibold">for part 2</h1>
+                <div class="w-3/4 grid grid-cols-2 gap-2">
+                    <div class="card border border-base-content">
+                        <div class="card-body">
+                            <img src="{{ asset('images/pest-logo.gif') }}" class="mb-5 w-2/3">
+                            <h2 class="card-title">pest</h2> 
+                            <p>Pest is a Testing Framework with a focus on simplicity. It was carefully crafted to bring the joy of testing to PHP.</p>
+                        </div>
+                    </div> 
+                    <div class="card border border-base-content">
+                        <div class="card-body">
+                            <img src="{{ asset('images/cypress-logo.webp') }}" class="mb-5 w-2/3">
+                            <h2 class="card-title">cypress</h2> 
+                            <p>purely JavaScript-based front end testing tool built for the modern web. It aims to address the pain points developers or QA engineers face while testing an application. Cypress is a more developer-friendly tool that uses a unique DOM manipulation technique and operates directly in the browser</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        <!-- End -->
+        <div id="slide-7" class="carousel-item hero min-h-screen bg-base-200">
+            <div class="w-screen hero-content flex-col justify-center px-20">
+                <h1 class="text-7xl font-bold">see you again!</h1>
+            </div>
+        </div>
     </div>
 @endsection

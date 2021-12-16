@@ -3,13 +3,13 @@ const calculator = (() => {
     var mem   = [];
     var operation = null;
 
-    var setNumber = (no) => {
-        if(mem[index] == undefined) {
-            mem[index] = [];
-        }
+    // var setNumber = (no) => {
+    //     if(mem[index] == undefined) {
+    //         mem[index] = [];
+    //     }
 
-        mem[index].push(no);
-    }
+    //     mem[index].push(no);
+    // }
 
     var getNumbers = () => {
         return mem;
@@ -108,7 +108,7 @@ const calculator = (() => {
     }
 
     return {
-        setNumber, 
+        // setNumber, 
         getNumbers,
         getNumber,
         setOperation, 

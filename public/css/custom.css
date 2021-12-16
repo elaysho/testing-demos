@@ -1,0 +1,21 @@
+.collapse-open .collapse-content,
+.collapse:focus:not(.collapse-close) .collapse-content,
+.collapse:not(.collapse-close) input[type=checkbox]:checked~.collapse-content {
+    --tw-bg-opacity: 1!important;
+    background-color: hsla(var(--b2) / var(--tw-bg-opacity))!important;
+}
+
+.collapse-open .collapse-title,
+.collapse:focus:not(.collapse-close) .collapse-title,
+.collapse:not(.collapse-close) input[type=checkbox]:checked~.collapse-title {
+    --tw-bg-opacity: 1!important;
+    background-color: hsla(var(--b2) / var(--tw-bg-opacity))!important;
+}
+
+/* .task .collapse-open,
+.collapse:focus:not(.collapse-close),
+.task .collapse:not(.collapse-close) input[type=checkbox]:checked~.task {
+    --tw-bg-opacity: 0.1!important;
+    background-color: hsla(var(--bc)/var(--tw-bg-opacity,1))!important;
+} */
+
